@@ -16,8 +16,9 @@ WORKDIR /app
 RUN git clone https://github.com/Dachande663/Plex-Export.git . &&\
     git clone https://github.com/dpDesignz/plex-export-responsive-skin &&\
     cp -rf plex-export-responsive-skin/* ./ &&\
-    rm LICENSE README.md \
-     if [ ! -f /data/index.html ] ; then cp /app/index.html /data/ ; cp -R /app/assets /data/ ; ln -s /app/plex-data/ /data/plex-data ; chmod 0755 -R /data/ ; fi
+    rm LICENSE README.md
+
+RUN if [ ! -f /data/index.html ] ; then cp /app/index.html /data/ ; cp -R /app/assets /data/ ; ln -s /app/plex-data/ /data/plex-data ; chmod 0755 -R /data/ ; fi
 
 #Copies entrypoint-script for modifying .env-file
 COPY build/entrypoint.sh /

@@ -4,11 +4,13 @@
 echo "Sleeps for 15s to initialize"
 sleep 15s
 
-if [ ! -f /data/index.html ] ; then cp /app/index.html /data/ ; cp -R /app/assets /data/ ; mkdir -p /app/plex-data; ln -sf /app/plex-data/ /data/plex-data ; chmod 0755 -R /data/ ; fi
+mkdir -p /data/plex-data
+
+if [ ! -f /data/index.html ] ; then cp /app/index.html /data/ ; cp -R /app/assets /data/ ; chmod 0755 -R /data/ ; fi
 
 while true; do  echo "Copping app-files to /data"
   
-  php /app/cli.php -plex-url="$PLEX_URL" -sections="$PLEX_SECTIONS" -sort-skip-words="$PLEX_SORT_SKIP_WORDS" -token="$PLEX_TOKEN" || break
+  php /app/cli.php -data-dir="/data/plex-data" -plex-url="$PLEX_URL" -sections="$PLEX_SECTIONS" -sort-skip-words="$PLEX_SORT_SKIP_WORDS" -token="$PLEX_TOKEN" || break
 
   echo ""
 

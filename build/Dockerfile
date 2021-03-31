@@ -19,5 +19,5 @@ RUN git clone https://github.com/Dachande663/Plex-Export.git . &&\
     rm LICENSE README.md
 
 #Copies entrypoint-script for modifying .env-file
-COPY entrypoint.sh /
+COPY /entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]

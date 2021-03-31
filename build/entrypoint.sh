@@ -4,8 +4,6 @@
 echo "Sleeps for 15s to initialize"
 sleep 15s
 
-mkdir -p /data/plex-data
-
 if [ ! -f /data/index.html ] ; then cp /app/index.html /data/ ; cp -R /app/assets /data/ ; chmod 0755 -R /data/ ; fi
 
 while true; do  echo "Copping app-files to /data"

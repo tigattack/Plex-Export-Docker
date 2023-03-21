@@ -80,4 +80,4 @@ Use cron syntax.
 
 > ```sh
 > CRON_SCHEDULE="0 * * * *" # Every hour
-```
+> ```

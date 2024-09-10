@@ -1,6 +1,10 @@
 # Plex-Export-Docker
 
-## Notice
+> [!TIP]
+> ## Archived / unused
+> ## You should check out [Plex-Spot](https://github.com/ziadhorat/Plex-Spot) :)
+
+## Fork notice
 
 Based on [RXWatcher/Plex-Export-Docker](https://github.com/RXWatcher/Plex-Export-Docker) and modified for my own personal use cases.
 
